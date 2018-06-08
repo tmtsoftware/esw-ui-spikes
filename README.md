@@ -59,6 +59,12 @@ They will not be included in the production build so you can use them for things
 
 In the project directory, you can run:
 
+@@@ note
+
+To run the below commands `npm install` command needs to be run first in the project directory.
+
+@@@ note
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
