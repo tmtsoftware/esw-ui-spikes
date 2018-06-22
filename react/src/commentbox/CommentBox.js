@@ -1,7 +1,37 @@
 import React, {Component} from 'react';
 import Comment from './Comment';
-import CommentForm from './CommentForm';
+import {CommentForm, Button} from './CommentForm';
+import styled, {css} from "styled-components";
 
+const customButtonCss = css`
+    border: 2px solid red;
+    ${props => props.primary && css`
+        background: tomato;
+        color: white;`
+    }
+    `;
+
+const MyButton = Button.extend`
+    ${customButtonCss}
+`;
+
+const Title = styled.h3`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
+
+const MyCommentForm = styled(CommentForm)`
+    button{
+        ${customButtonCss}
+    }
+`;
 
 class CommentBox extends Component {
 
@@ -24,9 +54,10 @@ class CommentBox extends Component {
         })
     };
 
-    _addComment = (author, comment)  => {
+    _addComment = (author, comment) => {
         this.setState({
-         comments: this.state.comments.concat([{author, comment}])})
+            comments: this.state.comments.concat([{author, comment}])
+        });
         this.props.updateNoOfComments(this.state.comments.length + 1)
     };
 
@@ -47,10 +78,14 @@ class CommentBox extends Component {
 
         return (
             <div className="comment-box">
-                <h3>Comments</h3>
-                < button onClick={this._handleClick}> {buttonText} </button>
+                <Wrapper>
+                    <Title>Comments</Title>
+                    <MyButton primary onClick={this._handleClick}> {buttonText} </MyButton>
+                </Wrapper>
                 {commentNodes}
-                <CommentForm add={this._addComment}/>
+                <CommentForm add={this._addComment} />
+                <MyCommentForm primary add={this._addComment}/>
+
             </div>
         );
     }
