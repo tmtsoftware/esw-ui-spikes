@@ -17,12 +17,18 @@ scalaJSUseMainModuleInitializer := true
 
 emitSourceMaps := false
 
+scalacOptions += "-P:scalajs:sjsDefinedByDefault"
+
 libraryDependencies ++= Seq(
   "com.raquo" %%% "laminar" % "0.3",
   "org.scala-js" %%% "scalajs-dom" % "0.9.5",
   "com.raquo" %%% "domtestutils" % "0.7" % Test,
   "org.scalatest" %%% "scalatest" % "3.0.5" % Test,
-  "com.github.japgolly.scalajs-react" %%% "core" % "1.2.0"
+  "com.github.japgolly.scalajs-react" %%% "core" % "1.2.0",
+  "me.shadaj" %%% "slinky-core" % "0.4.3",
+  "me.shadaj" %%% "slinky-web" % "0.4.3",
+  "me.shadaj" %%% "slinky-hot" % "0.4.3",
+  "me.shadaj" %%% "slinky-scalajsreact-interop" % "0.4.3"
 )
 
 npmDependencies in Compile ++= Seq(
