@@ -31,6 +31,8 @@ libraryDependencies ++= Seq(
   "me.shadaj" %%% "slinky-scalajsreact-interop" % "0.4.3"
 )
 
+addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M11" cross CrossVersion.full)
+
 npmDependencies in Compile ++= Seq(
   "react" -> "16.2.0",
   "react-dom" -> "16.2.0")

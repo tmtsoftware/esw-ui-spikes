@@ -1,12 +1,16 @@
-import org.scalajs.dom.document
+package samples.slinky
+
+import org.scalajs.dom
 import slinky.web.ReactDOM
-import slinky.web.html._
+
+import scala.scalajs.js.annotation.JSExportTopLevel
 
 object Main {
-  def main2(arguments: Array[String]): Unit = {
-  ReactDOM.render(
-    h1("Hello, world!"),
-    document.getElementById("main")
-  )
+  @JSExportTopLevel("entrypoint.main")
+  def main(args: Array[String]): Unit = {
+    ReactDOM.render(
+      MainComponent(),
+      dom.document.getElementById("main")
+    )
   }
 }
