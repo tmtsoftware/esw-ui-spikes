@@ -34,9 +34,9 @@ import slinky.web.html.{div, _}
       ul(
         shownCommentModels.map { comment =>
           li(Comment(comment.author, comment.comment))
-        }: _*
+        }
       ),
-      CommentForm(addComment = addCommentsToState()),
+      CommentForm(addComment = addCommentsToState())
     )
   }
 }

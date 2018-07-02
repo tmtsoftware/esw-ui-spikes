@@ -11,13 +11,13 @@ import slinky.web.html.div
 
   override def initialState: State = State(0)
 
-  def updateState(): Int => Unit = { length =>
+  def updateState: Int => Unit = { length =>
     setState(state.copy(length))
   }
 
   override def render(): ReactElement = {
     div(
-      CommentBox(updateState()),
+      CommentBox(updateState),
       Notification(state.commentListLength)
     )
   }
