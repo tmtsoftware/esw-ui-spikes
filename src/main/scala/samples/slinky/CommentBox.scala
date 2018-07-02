@@ -7,14 +7,14 @@ import slinky.web.html.{div, _}
 
 @react class CommentBox extends Component {
 
-  case class Props(updateCommentLengthInNotification: Int => Unit)
+  case class Props(updateCommentLength: Int => Unit)
   case class State(showComments: Boolean, comments: List[CommentModel])
 
   override def initialState: State = State(showComments = false, List.empty[CommentModel])
 
   def addCommentsToState(): (String, String) => Unit = { (author, comment) =>
     setState(state.copy(comments = state.comments :+ CommentModel(author, comment)), () => {
-      props.updateCommentLengthInNotification(state.comments.length)
+      props.updateCommentLength(state.comments.length)
     })
   }
 
@@ -32,8 +32,8 @@ import slinky.web.html.{div, _}
         })
       )(buttonText),
       ul(
-        shownCommentModels.map { comment =>
-          li(Comment(comment.author, comment.comment))
+        shownCommentModels.zipWithIndex.map { case (comment, index) =>
+          li(key := index.toString)(Comment(comment.author, comment.comment))
         }
       ),
       CommentForm(addComment = addCommentsToState())
