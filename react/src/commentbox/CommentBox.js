@@ -55,10 +55,11 @@ class CommentBox extends Component {
     };
 
     _addComment = (author, comment) => {
-        this.setState({
-            comments: this.state.comments.concat([{author, comment}])
-        });
-        this.props.updateNoOfComments(this.state.comments.length + 1)
+      this.setState({
+        comments: this.state.comments.concat([{author, comment}])
+      }, ()=> {
+        this.props.updateNoOfComments(this.state.comments.length)}
+        );
     };
 
     _handleClick = () => {
