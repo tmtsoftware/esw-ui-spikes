@@ -9,6 +9,7 @@
 *.iml
 .idea
 .xml
+/node_modules
 
 /*/project/project/target
 /*/project/target

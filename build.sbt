@@ -26,9 +26,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %%% "scalatest" % "3.0.5" % Test,
   "com.github.japgolly.scalajs-react" %%% "core" % "1.2.0",
   "me.shadaj" %%% "slinky-core" % "0.4.3",
-  "me.shadaj" %%% "slinky-web" % "0.4.3",
-  "me.shadaj" %%% "slinky-hot" % "0.4.3",
-  "me.shadaj" %%% "slinky-scalajsreact-interop" % "0.4.3"
+  "me.shadaj" %%% "slinky-web" % "0.4.3"
 )
 
 addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M11" cross CrossVersion.full)
