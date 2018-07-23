@@ -37,12 +37,14 @@ class CommentBox extends Component<IProps, IState> {
             buttonText = "Hide Comments";
             commentNodes = <div className="comment-list">{comments}</div>
         }
+       let A: React.ReactElement<Comment> = <Comment author="some" comment={"some"}/>
 
         return (
             <div className="comment-box">
                 <h3>Comments</h3>
                 < button onClick={this.handleClick}> {buttonText} </button>
                 {commentNodes}
+                {A}
                 <CommentForm add={this.addComment}/>
             </div>
         );
