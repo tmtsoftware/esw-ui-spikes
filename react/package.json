@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "dts-gen": "^0.5.7",
-    "mysequencer": "^3.1.3",
+    "mysequencer": "3.1.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4",

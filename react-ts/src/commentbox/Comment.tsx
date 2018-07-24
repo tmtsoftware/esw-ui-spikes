@@ -1,6 +1,6 @@
+import {Interoperability} from "mysequencer";
 import * as React from 'react';
 import { Component } from 'react';
-
 
 interface IProps {
     author: string,
@@ -18,6 +18,7 @@ class Comment extends Component<IProps> {
             <div className="comment">
                 <p>Comment Author - {author}</p>
                 <p>Comment - {comment}</p>
+                {Interoperability.Header}
             </div>
         );
     }
