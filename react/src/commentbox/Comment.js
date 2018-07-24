@@ -7,13 +7,12 @@ class Comment extends Component {
             author,
             comment
         } = this.props;
-        const A = mysequencer.HeaderComponent.MyHeader;
+        const A = mysequencer.Interoperability.Header;
         return (
             <div className="comment">
                 <p>Comment Author - {author}</p>
                 <p>Comment - {comment}</p>
                 {A}
-                { console.log(mysequencer.AA.dd())}
             </div>
         );
     }
