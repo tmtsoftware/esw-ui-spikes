@@ -3,7 +3,7 @@ package samples.slinky
 import slinky.core.Component
 import slinky.core.annotations.react
 import slinky.core.facade.ReactElement
-import slinky.web.html.div
+import slinky.web.html.{div, h1}
 
 @react class MainComponent extends Component {
   case class State(commentListLength: Int)
@@ -17,6 +17,7 @@ import slinky.web.html.div
 
   override def render(): ReactElement = {
     div(
+      h1("Slinky application"),
       CommentBox(updateState),
       Notification(state.commentListLength)
     )

@@ -32,8 +32,9 @@ import slinky.web.html.{div, _}
         })
       )(buttonText),
       ul(
-        shownCommentModels.zipWithIndex.map { case (comment, index) =>
-          li(key := index.toString)(Comment(comment.author, comment.comment))
+        shownCommentModels.zipWithIndex.map {
+          case (comment, index) =>
+            li(key := index.toString)(Comment(comment.author, comment.comment))
         }
       ),
       CommentForm(addComment = addCommentsToState())

@@ -25,12 +25,14 @@ libraryDependencies ++= Seq(
   "com.raquo" %%% "domtestutils" % "0.7" % Test,
   "org.scalatest" %%% "scalatest" % "3.0.5" % Test,
   "com.github.japgolly.scalajs-react" %%% "core" % "1.2.0",
-  "me.shadaj" %%% "slinky-core" % "0.4.3",
-  "me.shadaj" %%% "slinky-web" % "0.4.3"
+  "me.shadaj" %%% "slinky-core" % "0.5.0",
+  "me.shadaj" %%% "slinky-web" % "0.5.0",
+  "me.shadaj" %%% "slinky-styled-components" % "0.1.0"
 )
 
-addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M11" cross CrossVersion.full)
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 
 npmDependencies in Compile ++= Seq(
   "react" -> "16.2.0",
-  "react-dom" -> "16.2.0")
+  "react-dom" -> "16.2.0",
+  "styled-components" -> "3.4.10")

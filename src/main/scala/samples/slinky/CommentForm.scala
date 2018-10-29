@@ -5,6 +5,8 @@ import slinky.core.Component
 import slinky.core.annotations.react
 import slinky.core.facade.ReactElement
 import slinky.web.html._
+import slinky.styledcomponents._
+
 
 @react class CommentForm extends Component {
   case class Props(addComment: (String, String) => Unit)
@@ -24,9 +26,16 @@ import slinky.web.html._
               value := state.author),
         input(onChange := (v => setState(state.copy(comment = v.target.asInstanceOf[HTMLInputElement].value))),
               value := state.comment),
-        button("Post Comment#")
+        styledButton("Post Comment#")
       )
     )
   }
+
+  val styledButton = styled.button(
+    css"""
+    color: green;
+    background-color: pink
+  """
+  )
 
 }
